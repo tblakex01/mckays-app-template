@@ -60,45 +60,109 @@ NEXT_PUBLIC_POSTHOG_HOST=
 
 ## Setup
 
-1. Clone the repository
-2. Copy `.env.example` to `.env.local` and fill in the environment variables from above
-3. Install dependencies: `npm install`
-4. Run the development server: `npm run dev`
-5. Run linting: `npm run lint`
-6. Run type checking: `npm run type-check`
+Follow these steps to get the project running locally:
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd mckays-app-template
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+This will install all required dependencies including Next.js, React, TypeScript, and other libraries defined in `package.json`.
+
+### 3. Set up environment variables
+
+Copy the example environment file and fill in your credentials:
+
+```bash
+cp .env.example .env.local
+```
+
+Then edit `.env.local` and add the required values for:
+
+- `DATABASE_URL` - Your Supabase PostgreSQL connection string
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` - From your Clerk dashboard
+- `STRIPE_SECRET_KEY` and related Stripe keys - From your Stripe dashboard
+- `NEXT_PUBLIC_POSTHOG_KEY` and `NEXT_PUBLIC_POSTHOG_HOST` - From your PostHog project
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+### 5. Run linting and type checking
+
+Check for code quality issues:
+
+```bash
+npm run lint      # Run ESLint
+npm run type-check  # Run TypeScript type checking
+```
+
+Fix linting issues automatically:
+
+```bash
+npm run lint:fix  # Auto-fix ESLint issues
+npm run format:write  # Format code with Prettier
+```
 
 ## Project Structure
 
-- `app/` - Next.js app router
-- `components/` - Reusable UI components
-- `db/` - Database schema and migrations (Drizzle ORM)
-- `hooks/` - Custom React hooks
-- `lib/` - Utility functions and libraries
-- `public/` - Static assets
-- `types/` - TypeScript type definitions
-- `actions/` - Server actions
+```
+├── app/              # Next.js app router (pages, layouts, API routes)
+├── components/       # Reusable UI components
+├── db/               # Database schema and migrations (Drizzle ORM)
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions and libraries
+├── public/           # Static assets (images, fonts, etc.)
+├── types/            # TypeScript type definitions
+└── actions/          # Server actions
+```
+
+### Directory Details
+
+- **`app/`** - Next.js 13+ app router directory containing pages, layouts, loading states, and API routes
+- **`components/`** - Reusable UI components built with React and styled with Tailwind CSS
+- **`db/`** - Database schema definitions, migrations, and Drizzle ORM configuration
+- **`hooks/`** - Custom React hooks for state management and data fetching
+- **`lib/`** - Utility functions, helper methods, and external library configurations
+- **`public/`** - Static assets served at the root URL (images, favicon, etc.)
+- **`types/`** - Shared TypeScript type definitions and interfaces
+- **`actions/`** - Server actions for form submissions and data mutations
 
 ## Available Scripts
 
-- `dev` - Run development server
-- `build` - Build for production
-- `start` - Start production server
-- `lint` - Run ESLint
-- `clean` - Run lint:fix and format:write
-- `type-check` - Run TypeScript type checking
-- `lint:fix` - Run ESLint with --fix flag
-- `format:write` - Format code with Prettier
-- `format:check` - Check code formatting with Prettier
-- `analyze` - Build with bundle analyzer
-- `db:generate` - Generate Drizzle ORM schema
-- `db:migrate` - Run Drizzle ORM migrations
+| Script | Description |
+|--------|-------------|
+| `dev` | Start the development server with hot reload |
+| `build` | Build the application for production |
+| `start` | Start the production server |
+| `lint` | Run ESLint to check for code issues |
+| `clean` | Run lint:fix and format:write together |
+| `type-check` | Run TypeScript compiler to check types |
+| `lint:fix` | Run ESLint with --fix to auto-fix issues |
+| `format:write` | Format code with Prettier |
+| `format:check` | Check code formatting without modifying files |
+| `analyze` | Build with bundle analyzer to inspect bundle size |
+| `db:generate` | Generate Drizzle ORM migrations |
+| `db:migrate` | Run database migrations |
 
 ## Deployment
 
 This template is configured for deployment to Vercel:
 
 1. Push your code to a GitHub repository
-2. Import the project in Vercel (https://vercel.com/new)
+2. Import the project in Vercel ([https://vercel.com/new](https://vercel.com/new))
 3. Vercel will automatically detect the Next.js project and configure the build settings
 4. Add your environment variables in the Vercel project settings
 5. Deploy! Vercel will handle the build and deployment process

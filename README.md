@@ -62,5 +62,45 @@ NEXT_PUBLIC_POSTHOG_HOST=
 
 1. Clone the repository
 2. Copy `.env.example` to `.env.local` and fill in the environment variables from above
-3. Run `npm install` to install dependencies
-4. Run `npm run dev` to run the app locally
+3. Install dependencies: `npm install`
+4. Run the development server: `npm run dev`
+5. Run linting: `npm run lint`
+6. Run type checking: `npm run type-check`
+
+## Project Structure
+
+- `app/` - Next.js app router
+- `components/` - Reusable UI components
+- `db/` - Database schema and migrations (Drizzle ORM)
+- `hooks/` - Custom React hooks
+- `lib/` - Utility functions and libraries
+- `public/` - Static assets
+- `types/` - TypeScript type definitions
+- `actions/` - Server actions
+
+## Available Scripts
+
+- `dev` - Run development server
+- `build` - Build for production
+- `start` - Start production server
+- `lint` - Run ESLint
+- `clean` - Run lint:fix and format:write
+- `type-check` - Run TypeScript type checking
+- `lint:fix` - Run ESLint with --fix flag
+- `format:write` - Format code with Prettier
+- `format:check` - Check code formatting with Prettier
+- `analyze` - Build with bundle analyzer
+- `db:generate` - Generate Drizzle ORM schema
+- `db:migrate` - Run Drizzle ORM migrations
+
+## Deployment
+
+This template is configured for deployment to Vercel:
+
+1. Push your code to a GitHub repository
+2. Import the project in Vercel (https://vercel.com/new)
+3. Vercel will automatically detect the Next.js project and configure the build settings
+4. Add your environment variables in the Vercel project settings
+5. Deploy! Vercel will handle the build and deployment process
+
+For more detailed deployment instructions, see the [Vercel Next.js documentation](https://vercel.com/docs/frameworks/next.js).

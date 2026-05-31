@@ -1,5 +1,11 @@
 # Codebase Exploration Summary
 
+## Purpose and Audience
+
+This document provides a deep-dive reference for **new contributors**, **instructors**, and **developers** who need to understand the mckays-app-template codebase beyond the README. It complements (rather than duplicates) the README by capturing implementation details, schema definitions, and configuration specifics that change frequently during development.
+
+Keep this document updated alongside code changes. When adding new server actions, database tables, environment variables, or configuration, reflect those changes here to maintain a single source of truth for internal codebase structure.
+
 ## Project Information
 
 - **Name**: mckays-app-template
@@ -13,7 +19,7 @@
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 3.4 with CSS variables
-- **UI Components**: Shadcn/ui (based on Radix UI primitives)
+- **UI Components**: shadcn/ui (based on Radix UI primitives)
 - **Animations**: Framer Motion, Embla Carousel
 - **Forms**: React Hook Form + Zod validation
 - **Themes**: next-themes
@@ -61,7 +67,7 @@
 │   ├── layout.tsx           # Root layout
 │   └── favicon.ico
 ├── components/
-│   ├── ui/                  # Shadcn/ui components
+│   ├── ui/                  # shadcn/ui components
 │   │   ├── form.tsx
 │   │   ├── textarea.tsx
 │   │   ├── sidebar.tsx
@@ -134,7 +140,7 @@
 ├── .cursor/rules/           # Cursor AI rules (backend, frontend, auth, storage, analytics, payments)
 ├── .github/funding.yaml
 ├── .husky/pre-commit
-├── components.json          # Shadcn config
+├── components.json          # shadcn/ui configuration
 ├── middleware.ts            # Clerk middleware (protects /todo routes)
 ├── next.config.mjs
 ├── package.json
@@ -186,7 +192,7 @@
 
 ## Key Configuration Files
 
-- `components.json` - Shadcn/ui configuration (style, path aliases, Tailwind config)
+- `components.json` - shadcn/ui configuration (style, path aliases, Tailwind config)
 - `tailwind.config.ts` - Tailwind CSS configuration
 - `drizzle.config.ts` - Drizzle ORM configuration (points to `./db/schema/index.ts`)
 - `postcss.config.mjs` - PostCSS configuration

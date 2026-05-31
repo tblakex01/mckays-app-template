@@ -168,3 +168,16 @@ This template is configured for deployment to Vercel:
 5. Deploy! Vercel will handle the build and deployment process
 
 For more detailed deployment instructions, see the [Vercel Next.js documentation](https://vercel.com/docs/frameworks/next.js).
+
+## Documentation
+
+For more detailed documentation on specific parts of the codebase, see the [docs/](./docs) folder:
+
+- [Project Structure](./docs/structure.md) - Detailed directory and file structure
+- [App Directory](./docs/app.md) - Routes, layouts, and API endpoints
+- [Components](./docs/components.md) - Reusable UI components
+- [Database](./docs/db.md) - Schema and migrations
+- [Actions](./docs/actions.md) - Server actions
+- [Hooks](./docs/hooks.md) - Custom React hooks
+- [Types](./docs/types.md) - TypeScript type definitions
+- [Lib Utilities](./docs/lib.md) - Utility functions
